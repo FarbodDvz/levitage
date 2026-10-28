@@ -97,6 +97,64 @@ h1 em, .visit-copy h2 em { font-family: var(--serif); font-weight: 400; color: #
 .footer-brand .brand-subtitle { color: #a8a095; }
 .site-footer p { margin: 0; }
 .back-top { margin-inline-start: auto; }
+.memory-tribute {
+  width: min(100% - 32px, 560px);
+  margin: 26px auto 22px;
+  padding: 22px 24px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(231, 179, 109, 0.16);
+  border-radius: 16px;
+  color: #f3eee5;
+}
+
+.memory-tribute__eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: #e7b36d;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.memory-tribute__name {
+  margin: 0;
+  color: #f3eee5;
+  font-size: clamp(1rem, 2.5vw, 1.18rem);
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.memory-tribute__message {
+  margin: 5px 0 10px;
+  color: #c8c0b6;
+  font-size: 0.88rem;
+  line-height: 1.9;
+}
+
+.memory-tribute__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #e7b36d;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.memory-tribute__link:hover {
+  color: #f3d2a2;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.memory-tribute__prayer {
+  display: block;
+  margin-top: 12px;
+  color: #8f887e;
+  font-size: 0.74rem;
+}
+
+
 .copyright { font-family: var(--latin); letter-spacing: 1px; font-size: 9px; }
 .toast { position: fixed; bottom: 24px; left: 24px; background: #f4f0e9; color: #242321; padding: 10px 16px; box-shadow: 0 8px 30px #0002; font-size: 12px; border-radius: 3px; opacity: 0; transform: translateY(8px); pointer-events: none; transition: .25s; z-index: 50; }
 .toast.show { opacity: 1; transform: translateY(0); }
@@ -149,4 +207,18 @@ h1 em, .visit-copy h2 em { font-family: var(--serif); font-weight: 400; color: #
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+@media (max-width: 600px) {
+  .memory-tribute {
+    width: calc(100% - 28px);
+    margin-block: 20px 16px;
+    padding: 18px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .memory-tribute__link {
+    transition: none;
+  }
 }

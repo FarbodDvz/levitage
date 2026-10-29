@@ -234,7 +234,19 @@ h1 em, .visit-copy h2 em {
   .brand-subtitle { font-size: 8px; letter-spacing: 4px; margin-top: 3px; }
   .menu-toggle { display: block; margin-inline-start: auto; cursor: pointer; }
   .header-cta { font-size: 10px; padding: 7px 9px; }
-  .nav-links { display: none; position: absolute; top: 71px; inset-inline: 0; padding: 18px 24px 22px; background: var(--paper-light); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 12px; margin: 0; }
+  .nav-links { 
+    display: none; 
+    position: absolute; 
+    top: 71px; 
+    inset-inline: 0; 
+    padding: 18px 24px 22px; 
+    background: var(--header-bg); 
+    border-bottom: 1px solid var(--line); 
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 12px; 
+    margin: 0; 
+  }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 5px 0; }
   .hero { grid-template-columns: 1fr; gap: 55px; padding-block: 55px 70px; }
@@ -264,12 +276,23 @@ h1 em, .visit-copy h2 em {
   .footer-brand { min-width: calc(50% - 10px); }
   .site-footer p { order: 3; width: 100%; }
   .copyright { width: 100%; }
+  .theme-toggle {
+    padding: 7px 9px;
+    gap: 5px;
+    font-size: 11px;
+  }
 }
 @media (max-width: 390px) {
   .header-cta { display: none; }
   .section-heading { flex-direction: column; }
   .contact-row { gap: 11px; }
   .copy-button { padding: 5px 7px; }
+  .theme-toggle__label {
+    display: none;
+  }
+  .theme-toggle {
+    padding: 7px 9px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { 
@@ -520,29 +543,7 @@ h1 em,
   color: var(--ink);
 }
 
-/* Mobile header */
-@media (max-width: 800px) {
-  .theme-toggle {
-    padding: 7px 9px;
-    gap: 5px;
-    font-size: 11px;
-  }
 
-  .nav-links {
-    background: var(--header-bg);
-    border-bottom-color: var(--line);
-  }
-}
-
-@media (max-width: 390px) {
-  .theme-toggle__label {
-    display: none;
-  }
-
-  .theme-toggle {
-    padding: 7px 9px;
-  }
-}
 
 .visit-section {
   background: var(--surface-soft);

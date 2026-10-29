@@ -1,15 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
+  color-scheme: light;
+
   --paper: #f4f0e9;
   --paper-light: #fbf9f5;
   --ink: #242321;
   --muted: #746e65;
   --stone: #bca58a;
   --line: #ded7cc;
+
+  --header-bg: rgba(251, 249, 245, 0.94);
+  --nav-text: #625d56;
+  --accent: #8e765b;
+  --accent-strong: #9c7955;
+  --surface-soft: #eae3d8;
+  --card-bg: #e8e1d7;
+  --card-border: #cbbca9;
+
   --serif: Georgia, "Times New Roman", serif;
   --sans: "B Roya", Tahoma, sans-serif;
   --latin: "DM Sans", Arial, sans-serif;
+
+  --theme-transition: 220ms ease;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper: #191411;
+  --paper-light: #211914;
+  --ink: #f0e4d5;
+  --muted: #c0ad9a;
+  --stone: #bd8c5b;
+  --line: #49372b;
+
+  --header-bg: rgba(29, 22, 17, 0.94);
+  --nav-text: #d0bda9;
+  --accent: #d1a16e;
+  --accent-strong: #e0b17d;
+  --surface-soft: #2a2019;
+  --card-bg: #30241b;
+  --card-border: #5a4030;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
@@ -258,4 +289,311 @@ h1 em, .visit-copy h2 em {
   .memory-tribute__link {
     transition: none;
   }
+}
+
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background var(--theme-transition),
+    color var(--theme-transition),
+    border-color var(--theme-transition);
+}
+
+.theme-toggle:hover {
+  background: var(--surface-soft);
+}
+
+.theme-toggle__icon {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Smoothly transition the main surfaces */
+body,
+.site-header,
+.nav-links,
+.intro-band,
+.gallery-card,
+.visit-section,
+.site-footer,
+.contact-card,
+.theme-toggle,
+.toast {
+  transition:
+    background-color var(--theme-transition),
+    color var(--theme-transition),
+    border-color var(--theme-transition);
+}
+
+/* Shared elements */
+body {
+  background: var(--paper-light);
+  color: var(--ink);
+}
+
+.site-header {
+  background: var(--header-bg);
+  border-bottom-color: var(--line);
+}
+
+.nav-links {
+  color: var(--nav-text);
+}
+
+.header-cta {
+  border-color: var(--line);
+}
+
+.nav-links a:hover,
+.text-link:hover,
+.back-top:hover {
+  color: var(--accent-strong);
+}
+
+.eyebrow {
+  color: var(--accent);
+}
+
+h1 em,
+.visit-copy h2 em {
+  color: var(--accent);
+}
+
+.hero-description,
+.intro-copy,
+.section-heading > p {
+  color: var(--muted);
+}
+
+.hero-note,
+.visual-index {
+  color: var(--muted);
+}
+
+.button-dark {
+  background: var(--ink);
+  color: var(--paper-light);
+}
+
+.button-dark:hover {
+  background: var(--accent-strong);
+  color: #21160f;
+}
+
+.hero-image-frame {
+  background: var(--card-bg);
+}
+
+.hero-visual::before {
+  border-color: var(--card-border);
+}
+
+.image-stamp {
+  background: var(--ink);
+  color: var(--paper-light);
+}
+
+.intro-band {
+  background: var(--surface-soft);
+}
+
+.gallery-card {
+  background: var(--card-bg);
+  color: var(--ink);
+}
+
+/* Visit section */
+.visit-section {
+  background: var(--ink);
+  color: var(--paper-light);
+}
+
+.visit-copy .eyebrow {
+  color: var(--stone);
+}
+
+.visit-copy h2 em {
+  color: var(--stone);
+}
+
+.visit-description {
+  color: var(--muted);
+}
+
+.button-light {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.button-light:hover {
+  background: var(--stone);
+  color: #21160f;
+}
+
+.contact-card {
+  border-color: var(--line);
+}
+
+.contact-row {
+  border-bottom-color: var(--line);
+}
+
+.contact-icon {
+  border-color: var(--stone);
+  color: var(--stone);
+}
+
+.contact-label {
+  color: var(--muted);
+}
+
+.copy-button {
+  border-color: var(--line);
+  color: var(--paper-light);
+}
+
+.copy-button:hover {
+  background: var(--surface-soft);
+}
+
+/* Footer and memorial tribute */
+.site-footer {
+  background: var(--paper);
+  color: var(--muted);
+}
+
+.footer-brand {
+  color: var(--ink);
+}
+
+.footer-brand .brand-subtitle {
+  color: var(--muted);
+}
+
+.memory-tribute {
+  background: var(--paper-light);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.memory-tribute__eyebrow,
+.memory-tribute__link {
+  color: var(--accent-strong);
+}
+
+.memory-tribute__name {
+  color: var(--ink);
+}
+
+.memory-tribute__message {
+  color: var(--muted);
+}
+
+.memory-tribute__prayer {
+  color: var(--muted);
+}
+
+.memory-tribute__link:hover {
+  color: var(--ink);
+}
+
+.toast {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Mobile header */
+@media (max-width: 800px) {
+  .theme-toggle {
+    padding: 7px 9px;
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .nav-links {
+    background: var(--header-bg);
+    border-bottom-color: var(--line);
+  }
+}
+
+@media (max-width: 390px) {
+  .theme-toggle__label {
+    display: none;
+  }
+
+  .theme-toggle {
+    padding: 7px 9px;
+  }
+}
+
+.visit-section {
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.visit-copy .eyebrow {
+  color: var(--accent);
+}
+
+.visit-copy h2 em {
+  color: var(--accent);
+}
+
+.visit-description {
+  color: var(--muted);
+}
+
+.contact-card {
+  border-color: var(--card-border);
+}
+
+.contact-row {
+  border-bottom-color: var(--line);
+}
+
+.contact-icon {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.contact-label {
+  color: var(--muted);
+}
+
+.copy-button {
+  border-color: var(--card-border);
+  color: var(--ink);
+}
+
+.copy-button:hover {
+  background: var(--card-bg);
+}
+
+.button-light {
+  background: var(--ink);
+  color: var(--paper-light);
+}
+
+.button-light:hover {
+  background: var(--accent-strong);
+  color: var(--paper-light);
 }

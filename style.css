@@ -3,21 +3,21 @@
 :root {
   color-scheme: light;
 
-  /* Light theme: botanical green, toasted terracotta, and warm cream */
-  --paper: #eee3cf;
-  --paper-light: #fff8eb;
-  --ink: #26382f;
-  --muted: #6c6b5b;
-  --stone: #c77a52;
-  --line: #d9c7a9;
+  /* Light theme: terracotta, warm ivory, and charcoal */
+  --paper: #e8d9cc;
+  --paper-light: #fbf5ef;
+  --ink: #302a27;
+  --muted: #756962;
+  --stone: #c77d5c;
+  --line: #dfc8b9;
 
-  --header-bg: rgba(255, 248, 235, 0.94);
-  --nav-text: #4c5e50;
-  --accent: #b85b37;
-  --accent-strong: #984329;
-  --surface-soft: #e4e7d5;
-  --card-bg: #f2e2c9;
-  --card-border: #cbb493;
+  --header-bg: rgba(251, 245, 239, 0.95);
+  --nav-text: #554944;
+  --accent: #bd6545;
+  --accent-strong: #98472f;
+  --surface-soft: #eadbd1;
+  --card-bg: #f3e6dc;
+  --card-border: #d5b9a7;
 
   --serif: Georgia, "Times New Roman", serif;
   --sans: "B Roya", Tahoma, sans-serif;
@@ -545,25 +545,25 @@ h1 em,
 }
 
 
-/* Bold light-theme identity: botanical greens, terracotta, and a layered paper-like backdrop.
-   Scoped to light mode so the existing dark theme remains unchanged. */
+/* Terracotta + charcoal light theme: warm, editorial, and intentionally bold.
+   Kept in light mode only so the existing dark theme remains unchanged. */
 html:not([data-theme="dark"]) body {
   background-color: var(--paper-light);
   background-image:
-    radial-gradient(ellipse 48rem 34rem at 3% 8%, rgba(198, 111, 65, 0.16), transparent 72%),
-    radial-gradient(ellipse 44rem 38rem at 96% 30%, rgba(127, 147, 103, 0.19), transparent 74%),
-    radial-gradient(ellipse 50rem 30rem at 45% 78%, rgba(224, 193, 137, 0.20), transparent 75%),
-    repeating-linear-gradient(135deg, rgba(78, 94, 69, 0.025) 0, rgba(78, 94, 69, 0.025) 1px, transparent 1px, transparent 9px);
+    radial-gradient(ellipse 48rem 34rem at 3% 8%, rgba(189, 101, 69, 0.19), transparent 72%),
+    radial-gradient(ellipse 44rem 38rem at 96% 30%, rgba(94, 72, 62, 0.10), transparent 74%),
+    radial-gradient(ellipse 50rem 30rem at 45% 78%, rgba(221, 183, 157, 0.23), transparent 75%),
+    repeating-linear-gradient(135deg, rgba(72, 55, 47, 0.025) 0, rgba(72, 55, 47, 0.025) 1px, transparent 1px, transparent 9px);
   background-attachment: fixed;
 }
 
 html:not([data-theme="dark"]) .site-header {
-  box-shadow: 0 8px 28px rgba(63, 58, 42, 0.045);
+  box-shadow: 0 8px 28px rgba(55, 39, 31, 0.055);
 }
 
 html:not([data-theme="dark"]) .header-cta,
 html:not([data-theme="dark"]) .theme-toggle {
-  border-color: #c9a88a;
+  border-color: #d0ad99;
 }
 
 html:not([data-theme="dark"]) .header-cta:hover {
@@ -571,23 +571,23 @@ html:not([data-theme="dark"]) .header-cta:hover {
 }
 
 html:not([data-theme="dark"]) .hero-visual::before {
-  border-color: #b85b37;
+  border-color: #bd6545;
 }
 
 html:not([data-theme="dark"]) .image-stamp {
-  background: #344a38;
-  color: #fff8eb;
-  box-shadow: 8px 8px 0 rgba(184, 91, 55, 0.22);
+  background: #302a27;
+  color: #fbf5ef;
+  box-shadow: 8px 8px 0 rgba(189, 101, 69, 0.24);
 }
 
 html:not([data-theme="dark"]) .intro-band {
   background:
-    radial-gradient(ellipse at 90% 10%, rgba(184, 91, 55, 0.10), transparent 55%),
+    radial-gradient(ellipse at 90% 10%, rgba(189, 101, 69, 0.13), transparent 55%),
     var(--surface-soft);
 }
 
 html:not([data-theme="dark"]) .gallery-card {
-  box-shadow: 0 12px 32px rgba(63, 58, 42, 0.075);
+  box-shadow: 0 12px 32px rgba(55, 39, 31, 0.085);
 }
 
 html:not([data-theme="dark"]) .gallery-card figcaption span {
@@ -596,40 +596,32 @@ html:not([data-theme="dark"]) .gallery-card figcaption span {
 
 html:not([data-theme="dark"]) .visit-section {
   background:
-    radial-gradient(ellipse at 8% 20%, rgba(184, 91, 55, 0.10), transparent 45%),
+    radial-gradient(ellipse at 8% 20%, rgba(189, 101, 69, 0.12), transparent 45%),
     var(--surface-soft);
 }
 
 html:not([data-theme="dark"]) .contact-card {
-  border-color: #c7cdb4;
-  background: rgba(255, 248, 235, 0.52);
+  border-color: #d5b9a7;
+  background: rgba(255, 250, 245, 0.58);
 }
 
 html:not([data-theme="dark"]) .contact-icon {
-  border-color: #b85b37;
-  color: #984329;
+  border-color: #bd6545;
+  color: #98472f;
 }
 
-html:not([data-theme="dark"]) .button-dark {
-  background: #344a38;
-  color: #fff8eb;
-}
-
-html:not([data-theme="dark"]) .button-dark:hover {
-  background: #b85b37;
-  color: #fff8eb;
-}
-
+html:not([data-theme="dark"]) .button-dark,
 html:not([data-theme="dark"]) .button-light {
-  background: #344a38;
-  color: #fff8eb;
+  background: #302a27;
+  color: #fbf5ef;
 }
 
+html:not([data-theme="dark"]) .button-dark:hover,
 html:not([data-theme="dark"]) .button-light:hover {
-  background: #b85b37;
-  color: #fff8eb;
+  background: #bd6545;
+  color: #fffaf6;
 }
 
 html:not([data-theme="dark"]) .site-footer {
-  background: #e9dfcc;
+  background: #e8d9cc;
 }

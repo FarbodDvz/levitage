@@ -625,3 +625,114 @@ html:not([data-theme="dark"]) .button-light:hover {
 html:not([data-theme="dark"]) .site-footer {
   background: #e8d9cc;
 }
+
+
+/* Organic shapes + quiet coffee-bean line art for the terracotta light theme.
+   Decorative layers stay behind content and disappear in dark mode. */
+html:not([data-theme="dark"]) .hero {
+  position: relative;
+  isolation: isolate;
+}
+
+html:not([data-theme="dark"]) .hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: clamp(230px, 31vw, 430px);
+  aspect-ratio: 1;
+  top: 7%;
+  right: -3%;
+  border-radius: 41% 59% 63% 37% / 47% 39% 61% 53%;
+  background:
+    radial-gradient(ellipse at 35% 30%, rgba(189, 101, 69, 0.16), transparent 68%),
+    rgba(199, 125, 92, 0.07);
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+html:not([data-theme="dark"]) .intro-band {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+html:not([data-theme="dark"]) .intro-band::before,
+html:not([data-theme="dark"]) .intro-band::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(152, 71, 47, 0.18);
+  border-radius: 48% 52% 38% 62% / 55% 39% 61% 45%;
+  pointer-events: none;
+}
+
+html:not([data-theme="dark"]) .intro-band::before {
+  width: 240px;
+  height: 290px;
+  top: -155px;
+  left: -75px;
+  transform: rotate(28deg);
+  box-shadow: 0 0 0 18px rgba(189, 101, 69, 0.035), 0 0 0 38px rgba(189, 101, 69, 0.025);
+}
+
+html:not([data-theme="dark"]) .intro-band::after {
+  width: 180px;
+  height: 220px;
+  right: -45px;
+  bottom: -135px;
+  transform: rotate(-24deg);
+  box-shadow: 0 0 0 16px rgba(189, 101, 69, 0.035), 0 0 0 34px rgba(189, 101, 69, 0.025);
+}
+
+html:not([data-theme="dark"]) .gallery {
+  position: relative;
+  isolation: isolate;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='112' viewBox='0 0 112 112'%3E%3Cg fill='none' stroke='%2398472f' stroke-opacity='.13' stroke-width='1.2'%3E%3Cellipse cx='28' cy='27' rx='7' ry='13' transform='rotate(-34 28 27)'/%3E%3Cpath d='M22 17 Q31 27 33 37'/%3E%3Cellipse cx='82' cy='83' rx='6' ry='11' transform='rotate(32 82 83)'/%3E%3Cpath d='M76 74 Q84 83 87 93'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 112px 112px;
+  background-position: 18px 20px;
+}
+
+html:not([data-theme="dark"]) .gallery-card {
+  border: 1px solid rgba(152, 71, 47, 0.10);
+}
+
+html:not([data-theme="dark"]) .visit-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+html:not([data-theme="dark"]) .visit-section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 340px;
+  height: 420px;
+  right: -160px;
+  top: -210px;
+  border: 1px solid rgba(189, 101, 69, 0.24);
+  border-radius: 47% 53% 60% 40% / 43% 45% 55% 57%;
+  transform: rotate(32deg);
+  box-shadow: 0 0 0 22px rgba(189, 101, 69, 0.055), 0 0 0 48px rgba(189, 101, 69, 0.035);
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  html:not([data-theme="dark"]) .hero::before {
+    width: 220px;
+    top: 31%;
+    right: -18%;
+  }
+
+  html:not([data-theme="dark"]) .intro-band::before {
+    left: -170px;
+  }
+
+  html:not([data-theme="dark"]) .intro-band::after {
+    right: -125px;
+  }
+
+  html:not([data-theme="dark"]) .gallery {
+    background-size: 88px 88px;
+  }
+}
